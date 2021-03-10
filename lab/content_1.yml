@@ -1,0 +1,45 @@
+- hosts: host01
+  tasks:
+  - name: "Replace Content host01"
+    replace: 
+      path: /var/www/default/index.html
+      regexp: 'My World'
+      replace: 'My Host 1 World'
+      backup: yes
+
+  - name: "Replace Color host01"
+    replace: 
+      path: /var/www/default/index.html
+      regexp: '<body>'
+      replace: '<body style="color: red" >'
+      backup: yes
+- hosts: host02
+  tasks:
+  - name: "Replace Content host02"
+    replace: 
+      path: /var/www/default/index.html
+      regexp: 'My World'
+      replace: 'My Host 2 World'
+      backup: yes
+
+  - name: "Replace Color host02"
+    replace: 
+      path: /var/www/default/index.html
+      regexp: '<body>'
+      replace: '<body style="color: yellow" >'
+      backup: yes
+- hosts: host03
+  tasks:
+  - name: "Replace Content host03"
+    replace: 
+      path: /var/www/default/index.html
+      regexp: 'My World'
+      replace: 'My Host 3 World'
+      backup: yes
+
+  - name: "Replace Color host03"
+    replace: 
+      path: /var/www/default/index.html
+      regexp: '<body>'
+      replace: '<body style="color: green" >'
+      backup: yes
